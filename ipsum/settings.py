@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ['*']
 DATABASES = {'default': dj_database_url.config(
     default='postgres://dan:steely@localhost/ipsum')}
 
-
+INTERNAL_IPS = ('127.0.0.1')
 # Application definition
 
 INSTALLED_APPS = [
@@ -139,3 +139,6 @@ STATIC_ROOT = os.path.join((BASE_DIR), 'static', 'static_root')
 
 STATICFILES_DIRS = (os.path.join(
     (BASE_DIR), "static",),)
+
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config()
