@@ -11,7 +11,7 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "goals.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "ipsum.settings")
 
 from whitenoise.django import DjangoWhiteNoise
 
