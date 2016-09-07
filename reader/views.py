@@ -44,7 +44,10 @@ def index(request):
             form = ParagraphForm(initial={'number_of_paragraphs': 1})
             return render(request, 'index.html', {'form': form})
     else:
-        context = request.session['context']
+        if 'context' not in request.session:
+            context = ""
+
+        else:
+            context = request.session['context']
         form = ParagraphForm(initial={'number_of_paragraphs': 1})
-        
         return render(request, 'index.html', {'form': form, 'context': context,})
