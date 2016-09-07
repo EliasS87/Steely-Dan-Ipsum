@@ -26,13 +26,13 @@
 		
 		</div>
 
-	<div class='paragraph-div'>{% for item in context %}
+	<div class='paragraph-div'>
 		<div class="row steely-text">
-			<div class="medium-6 large-8 columns">{{item.text|linebreaksbr}}</div>
+			<div class="medium-6 large-8 columns">{{context|linebreaks}}</div>
 		</div>
 
 
-		{% endfor %}
+		
 	</div>
 	<br>
 	<div>

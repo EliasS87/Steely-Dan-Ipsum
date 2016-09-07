@@ -6,7 +6,6 @@ import os
 import random
 first_list = []
 final_list = []
-context = ""
 
 
 def index(request):
@@ -34,15 +33,18 @@ def index(request):
                 index_int = random.randint(0, list_length - 1)
                 result = first_list[index_int]
                 paragraph = form.save(commit=False)
+                # Take list of words from one paragraph and joint them with spaces
                 string = " ".join(str(x) for x in result)
+                # Then join paragraphs together and separate them with return
                 paragraph.text += '\n' + string + '.' + '\n'
             paragraph.save()
-            
+            request.session['context'] = paragraph.text
             return redirect('index')
         else:
             form = ParagraphForm(initial={'number_of_paragraphs': 1})
             return render(request, 'index.html', {'form': form})
     else:
-        context = Paragraph.objects.all()
+        context = request.session['context']
         form = ParagraphForm(initial={'number_of_paragraphs': 1})
+        
         return render(request, 'index.html', {'form': form, 'context': context,})

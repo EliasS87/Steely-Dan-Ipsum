@@ -14,6 +14,4 @@ from whitenoise.django import DjangoWhiteNoise
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "ipsum.settings")
 
-
-
 application = DjangoWhiteNoise(get_wsgi_application())
