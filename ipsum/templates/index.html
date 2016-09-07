@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<title>Steely Ipsum</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static  'css/foundation.css' %}">
+	<link rel="stylesheet" href="{% static  'css/reader.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Kavoon|Ubuntu" rel="stylesheet">
+</head>
+<body>
+
+	<div class='image-div'>
+		
+		<div class="row nopadding-row">
+			<div class="medium-12 large-12 columns nopadding"><img  class='main-image' src="{% static 'images/steelyblur.jpg'  %}"></div>
+		</div>
+		<div class="row text-row">
+			<div class="medium-8 large-8 columns nopadding"><div class="callout callout-text ">
+			<h1 class='text-title'>Steely Dan Ipsum</h1>
+			<p class='text'>Any Major Dude will tell you Steely Dan lyrics make for a fine Lorem Ipsum alternative </p>
+		</div></div>
+		</div>
+		<div class="top-bar">
+		
+		
+		</div>
+
+	<div class='paragraph-div'>{% for item in context %}
+		<div class="row steely-text">
+			<div class="medium-6 large-8 columns">{{item.text|linebreaksbr}}</div>
+		</div>
+
+
+		{% endfor %}
+	</div>
+	<br>
+	<div>
+		<form method="POST" action="" enctype="multipart/form-data">
+			{% csrf_token %}
+			<div class="row">
+				<div class="small-12 medium-12 large-12 columns para-selector"><label class="selector-label"><strong>Rikki Go Choose that Number:</strong> </label></div>
+			</div>
+
+
+			<div class="row">
+				<div class="small-2 medium-2 large-1 columns para-selector">{{form.number_of_paragraphs}}</div>
+			</div>
+			<div class="row">
+				<div class="medium-2 large-1 columns"><input class= 'button-submit button round' type="submit" value="Submit" /></div>
+			</div>
+
+
+		</form>
+	</div>
+
+</body>
+
+<div class="row nopadding-row">
+	<div class="medium-12 large-12 columns nopadding"><footer><div class='inner-footer'>The Cuervor Gold, the fine columbian, make this site a wonderful thing. All Ispum content credit goes to Steely Dan.</div></footer></div>
+</div>
+
+<script src="{% static 'js/jquery-1.12.3.min.js' %}"></script>
+
+<script src="{% static 'js/vendor/foundation.js' %}"></script>
+</html>
+
+
