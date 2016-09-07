@@ -28,8 +28,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
-DATABASES = {'default': dj_database_url.config(default='postgres://dan:steely@localhost/ipsum')}
-
+DATABASES = {'default': dj_database_url.config(
+    default='postgres://dan:steely@localhost/ipsum')}
 
 
 # Application definition
@@ -86,7 +86,7 @@ DATABASES = {
         'USER': 'dan',
         'PASSWORD': 'steely',
         'HOST': 'localhost',
-        'PORT': '',
+        'PORT': '5432',
     }
 }
 
