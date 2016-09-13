@@ -82,9 +82,9 @@ WSGI_APPLICATION = 'ipsum.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ipsum',
-        'USER': 'dan',
-        'PASSWORD': 'steely',
+        'NAME': 'DB',
+        'USER': 'DB',
+        'PASSWORD': 'DB',
         'HOST': 'localhost',
         'PORT': '5432',
     }
